@@ -1,0 +1,766 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+    --orange: #ffa500;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+*::selection {
+    background: var(--orange);
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+    /* overflow: hidden; */
+    background: #e7e6e6;
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 9%;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+header .logo span {
+    /* color: orange; */
+    color: var(--orange);
+}
+
+header .navbar a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 0.8rem;
+}
+
+header .navbar a:hover {
+    color: var(--orange);
+}
+
+header .icons i {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+header .icons i:hover {
+    color: var(--orange);
+}
+
+header .search-bar-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #333;
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    /* add this below property after label(header .search-bar-container label:hover) done*/
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+/* ****************************************** */
+/*below code linked with js */
+header .search-bar-container.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    height: 6rem;
+}
+
+/* ****************************************** */
+
+header .search-bar-container #search-bar {
+    width: 100%;
+    padding: 1rem;
+    text-transform: none;
+    color: #333;
+    border-radius: 0.5rem;
+    margin-left: 1.1rem;
+}
+
+header .search-bar-container label {
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+header .search-bar-container label:hover {
+    color: var(--orange);
+}
+
+/*login form*/
+.login-form-contanier {
+    position: fixed;
+    left: 0;
+    /* top: 0; */
+    top: -120%;
+    /*login page will hide until its got clicked*/
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ****************************************** */
+/*below code linked with js */
+.login-form-contanier.active {
+    top: 0;
+}
+
+/* ****************************************** */
+.login-form-contanier form {
+    background: #fff;
+    width: 50rem;
+    margin: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.login-form-contanier form h3 {
+    font-size: 3rem;
+    color: #444;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.login-form-contanier form .box {
+    width: 100%;
+    color: #333;
+    padding: 1rem;
+    font-size: 1.7rem;
+    margin: 0.6rem 0;
+    border: 2px solid rgba(0, 0, 0, .3);
+    text-transform: none;
+}
+
+.login-form-contanier form .box:focus {
+    border-color: var(--orange);
+}
+
+.login-form-contanier form #remember {
+    margin: 2rem 0;
+}
+
+.login-form-contanier form label {
+    font-size: 1.5rem;
+}
+
+/* login button */
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--orange);
+    color: #fff;
+    padding: 0.8rem 3rem;
+    border: 0.2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background-color: rgba(255, 165, 0, .2);
+    color: var(--orange);
+}
+
+.login-form-contanier form .btn {
+    width: 100%;
+    display: block;
+}
+
+.login-form-contanier form p {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.login-form-contanier form p a {
+    color: var(--orange);
+}
+
+.login-form-contanier form p a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+.login-form-contanier #form-close {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    cursor: pointer;
+    font-size: 5rem;
+    color: #fff;
+}
+
+/* menu-bar */
+#menu-bar {
+    color: #fff;
+    font-size: 3rem;
+    border: 0.1rem solid #fff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Home section */
+section {
+    padding: 2rem 9%;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    z-index: 0;
+}
+
+.home .content {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.home .content h3 {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, .1);
+    /* font-weight: bolder; */
+}
+
+.home .content p {
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+    color: #fff;
+}
+
+.home .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.home .controls {
+    padding: 1rem;
+    border-radius: 5rem;
+    background: rgba(0, 0, 0, .7);
+    position: relative;
+    top: 10rem;
+    /* left: -0.8rem; */
+}
+
+.home .controls .vid-btn {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.home .controls .vid-btn.active {
+    background: var(--orange);
+}
+
+/* booking starts here */
+.heading {
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+.heading span {
+    font-size: 3.5rem;
+    background: rgba(255, 165, 0, .2);
+    color: var(--orange);
+    border-radius: 0.5rem;
+    padding: 0.2rem 1rem;
+}
+
+.heading span.space {
+    background: none;
+}
+
+.book .row {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.book .row .image {
+    flex: 1 1 40rem;
+}
+
+.book .row .image img {
+    width: 100%;
+}
+
+.book .row form {
+    flex: 1 1 40rem;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+    border-radius: 0.5rem;
+}
+
+.book .row form .inputBox {
+    padding: 0.5rem 0;
+}
+
+.book .row form .inputBox input {
+    width: 100%;
+    padding: 1rem;
+    border: 0.1rem solid rgba(0, 0, 0, .1);
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+}
+
+.book .row form .inputBox h3 {
+    font-size: 2rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+/* box border with orange color */
+.book .row form .inputBox input:focus {
+    color: var(--orange);
+    border: 1px solid;
+    border-radius: 0.5rem;
+}
+
+/* package section starts  */
+
+.packages .box-container .box img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.packages .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.packages .box-container .box {
+    flex: 1 1 30rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+.packages .box-container .box .content {
+    font-size: 2rem;
+    color: #333;
+    padding-left: 1.2rem;
+}
+
+
+.packages .box-container .box .content h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* location icon color change to orange */
+.packages .box-container .box .content h3 i {
+    color: var(--orange);
+    margin-right: 0.5rem;
+}
+
+/* paragraph setting */
+.packages .box-container .box .content p {
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+/* stars*/
+.packages .box-container .box .content .stars i {
+    font-size: 1.7rem;
+    color: var(--orange);
+}
+
+/* price */
+.packages .box-container .box .content .price {
+    font-size: 2rem;
+    color: #333;
+    padding-top: 1rem;
+}
+
+.packages .box-container .box .content .price span {
+    color: #666;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+/* for button */
+.packages .box-container .box .content .btn {
+    margin-bottom: 1.2rem;
+}
+
+/*  Package section ends  */
+
+/* service section starts  */
+.services .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0 10rem;
+}
+
+.services .box-container .box {
+    flex: 1 1 30rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.services .box-container .box i {
+    padding: 1rem;
+    font-size: 5rem;
+    color: var(--orange);
+}
+
+.services .box-container .box h3 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.services .box-container .box p {
+    font-size: 1.5rem;
+    color: #666;
+    padding: 1rem;
+}
+
+.services .box-container .box:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+/* service section ends  */
+
+/* gallery section starts */
+
+.gallery .box-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.gallery .box-container .box {
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+    border: 1rem solid #fff;
+    border-radius: 0.5rem;
+    flex: 1 1 30rem;
+    height: 25rem;
+    position: relative;
+}
+
+.gallery .box-container .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery .box-container .box .content {
+    position: absolute;
+    /* first put top 0, and then change it to -100, then it will hide automatically */
+    /* top: 0;  */
+    top: -100;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, .7);
+    padding: 2rem;
+    padding-top: 5rem;
+}
+
+
+.gallery .box-container .box .content h3 {
+    font-size: 2.5rem;
+    color: var(--orange);
+}
+
+.gallery .box-container .box .content p {
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 0.5rem 0;
+}
+
+.gallery .box-container .box:hover .content {
+    top: 0;
+}
+
+
+/* gallery section ends */
+
+/* review section starts  */
+
+.review .review-slider {
+    padding-bottom: 2rem;
+}
+
+.review .box {
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    border-radius: 0.5rem;
+}
+
+.review .box img {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.review .box h3 {
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.review .box p {
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.review .stars i {
+    color: var(--orange);
+    font-size: 1.7rem;
+}
+
+/* review section ends  */
+
+/* contact section starts */
+
+.contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contact .row .image {
+    flex: 1 1 35rem;
+}
+
+.contact .row .image img {
+    width: 100%;
+}
+
+
+.contact .row form {
+    flex: 1 1 50rem;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+    border-radius: 0.5rem;
+}
+
+.contact .row form .inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact .row form .inputBox input,
+.contact .row form textarea {
+    width: 49%;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #333;
+    background: #f7f7f7;
+    text-transform: none;
+}
+
+.contact .row form textarea {
+    resize: none;
+    width: 100%;
+    height: 15rem;
+}
+
+/* border color shading */
+.contact .row form .inputBox input:focus {
+    color: var(--orange);
+    border: 1px solid;
+    border-radius: 0.5rem;
+}
+
+.contact .row form textarea:focus {
+    color: var(--orange);
+    border: 1px solid;
+    border-radius: 0.5rem;
+}
+
+/* contact section ends */
+
+/* brand section starts  */
+.brand-container {
+    padding: 2rem;
+    text-align: center;
+    margin: 0 9rem;
+}
+
+.brand-container .swiper-wrapper .swiper-slide img {
+    text-align: center;
+    width: 12rem;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* brand section ends  */
+
+/* footer section starts */
+.footer{
+    background-color:#333;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer .box-container .box{
+    padding: 1rem 0rem;
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding: 0.7rem 0;
+    color: #fff;
+}
+
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    padding: 0.7rem 0;
+    color: #eee;
+    padding-right: 2rem;
+}
+
+.footer .box-container .box a{
+  display: block;
+    font-size: 1.5rem;
+    padding: 0.7rem 0;
+    color: #eee;
+}
+
+.footer .box-container .box a:hover{
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    color: #fff;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    font-weight: normal;
+    border-top: 0.1rem solid rgba(255,255,255,.2);
+}
+
+.footer .credit span{
+    color: var(--orange);
+}
+
+
+/* media queries */
+@media (max-width:1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width:990px) {
+    header {
+        padding: 2rem;
+    }
+}
+
+@media (max-width:769px) {
+    #menu-bar {
+        display: initial;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: #333;
+        border-top: 0.2rem solid rgba(255, 255, 255, 0.2);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    /* ****************************************** */
+    /*below code linked with js */
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* **************************************** */
+
+    header .navbar a {
+        display: block;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin: 1.5rem;
+        background: #222;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading span {
+        font-size: 2.5rem;
+    }
+}
